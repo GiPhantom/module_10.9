@@ -1,0 +1,6 @@
+---
+# tasks file for skillbox1
+- name: Ensure nginx installed
+  package:
+        name: "nginx"
+        state: present
