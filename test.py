@@ -2,7 +2,7 @@ import pytest
 import testinfra
 
 def test_os_release(host):
-    assert host.file ("/etc/os-release").contains("Ubuntu")
+    assert host.file ("/etc/os-release").contains("Alpine")
 
 def test_nginx_is_installed(host):
     nginx = host.package("nginx")
@@ -10,7 +10,7 @@ def test_nginx_is_installed(host):
     assert nginx.version.startswith("1.16.1")
 
 #def test_socket_listening(host):
-#     assert host.socket('tsp://0.0.0.0:8080).is_listening
+#     assert host.socket("tsp"'://0.0.0.0:8080').is_listening
 #     ip = host.interface('eth0').addresses[0]
-#     response = requests.get('http://{}'.format(ip))
+#     response = requests.get("http""://'{}'.format(ip)")
 #     assert response.status_code ==200 
